@@ -2,7 +2,6 @@
 PUBLIC SIMD_YMM
 SIMD_YMM PROC
     
-    movsxd r9, r9d
     test    r9, r9
     jle     done
     mov     r10, r9
