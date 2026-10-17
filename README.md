@@ -27,6 +27,39 @@ RELEASE VERSION Visual Studio
 
 ii.) comparative table of execution time as well as analysis of the performance of diﬀerent kernels (how many times faster, why is it faster, etc.)
 
+DEBUG (seconds)
+| n | C | x86-64 | XMM | YMM |
+|---|---|---|---|---|
+| 1024 | 0.002191 | 0.000579 | 0.000140 | 0.000101 |
+| 8192 | 0.177418 | 0.084402 | 0.039575 | 0.029571 |
+| 32768 | 4.439743 | 1.017200 | 0.619246 | 0.598237 |
+| 1013 (boundary) | 0.004713 | 0.001278 | 0.000171 | 0.000197 |
+
+RELEASE (seconds)
+| n | C | x86-64 | XMM | YMM |
+|---|---|---|---|---|
+| 1024 | 0.002191 | 0.000579 | 0.000140 | 0.000101 |
+| 8192 | 0.177418 | 0.084402 | 0.039575 | 0.029571 |
+| 32768 | 4.439743 | 1.017200 | 0.619246 | 0.598237 |
+| 1013 (boundary) | 0.004713 | 0.001278 | 0.000171 | 0.000197 |
+
+SPEEDUP OVER C (DEBUG)
+| n | x86-64 | XMM | YMM |
+|---|---|---|---|
+| 1024 | 1.0x | 4.0x | 6.0x |
+| 8192 | 1.2x | 2.7x | 3.1x |
+| 32768 | 1.3x | 2.9x | 3.1x |
+| 1013 | 1.3x | 4.4x | 5.4x |
+
+SPEEDUP OVER C (RELEASE)
+| n | x86-64 | XMM | YMM |
+|---|---|---|---|
+| 1024 | 3.8x | 15.6x | 21.7x |
+| 8192 | 2.1x | 4.5x | 6.0x |
+| 32768 | 4.4x | 7.2x | 7.4x |
+| 1013 | 3.7x | 27.6x | 23.9x |
+
+In Release, YMM is the fastest kernel at every size, followed by XMM, then x86-64, then C. At n = 32768, YMM is about 3.1x faster than C and about 2.4x faster than scalar x86-64. XMM is about 2.9x faster than C. The SIMD kernels are faster because one instruction processes 4 (XMM) or 8 (YMM) floats at once, so fewer instructions run per row. The scalar x86-64 kernel is only about 1.0-1.3x faster than optimized C in Release.
 
 iii.) screenshot of the program output with correctness check (C)
 
