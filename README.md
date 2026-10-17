@@ -1,7 +1,7 @@
 # SIMD_Programming
 README
 
-i.) screenshot of the program output with execution time for all cases
+# i.) screenshot of the program output with execution time for all cases
 
 DEBUG VERSION Visual Studio
 
@@ -25,7 +25,7 @@ RELEASE VERSION Visual Studio
 <img width="603" height="245" alt="image" src="https://github.com/user-attachments/assets/37b99155-51a5-4dad-9692-7ba2aab39c09" />
 
 
-ii.) comparative table of execution time as well as analysis of the performance of diﬀerent kernels (how many times faster, why is it faster, etc.)
+# ii.) comparative table of execution time as well as analysis of the performance of diﬀerent kernels (how many times faster, why is it faster, etc.)
 
 DEBUG (seconds)
 | n | C | x86-64 | XMM | YMM |
@@ -61,7 +61,7 @@ SPEEDUP OVER C (RELEASE)
 
 In Release, YMM is the fastest kernel at every size, followed by XMM, then x86-64, then C. At n = 32768, YMM is about 3.1x faster than C and about 2.4x faster than scalar x86-64. XMM is about 2.9x faster than C. The SIMD kernels are faster because one instruction processes 4 (XMM) or 8 (YMM) floats at once, so fewer instructions run per row. The scalar x86-64 kernel is only about 1.0-1.3x faster than optimized C in Release.
 
-iii.) screenshot of the program output with correctness check (C)
+# iii.) screenshot of the program output with correctness check (C)
 
 Case: 2^13 x 2^13 Matrix RELEASE Version
 
@@ -71,7 +71,7 @@ Case: 2^13 x 2^13 Matrix RELEASE Version
 
 
 
-iv.) screenshot of the program output, including correctness check (x86-64)
+# iv.) screenshot of the program output, including correctness check (x86-64)
 
 <img width="807" height="82" alt="image" src="https://github.com/user-attachments/assets/9bba7349-369a-4354-b05b-096feb29cdf8" />
 
@@ -79,7 +79,7 @@ iv.) screenshot of the program output, including correctness check (x86-64)
 
 
 
-v.) screenshot of the program output, including correctness check (SIMD XMM register)
+# v.) screenshot of the program output, including correctness check (SIMD XMM register)
 
 <img width="783" height="82" alt="image" src="https://github.com/user-attachments/assets/2e0d23c6-4351-4149-b49e-63e5c925bc10" />
 
@@ -88,7 +88,7 @@ v.) screenshot of the program output, including correctness check (SIMD XMM regi
 
 
 
-vi.) screenshot of the program output, including correctness check (SIMD, YMM register)
+# vi.) screenshot of the program output, including correctness check (SIMD, YMM register)
 
 <img width="812" height="81" alt="image" src="https://github.com/user-attachments/assets/9334d08c-5f35-40e0-be6e-a89f8d904b4b" />
 
@@ -96,11 +96,11 @@ vi.) screenshot of the program output, including correctness check (SIMD, YMM re
 
 
 
-vii.) screenshot of boundary check for SIMD XMM and SIMD YMM.
+# vii.) screenshot of boundary check for SIMD XMM and SIMD YMM.
 <img width="638" height="625" alt="image" src="https://github.com/user-attachments/assets/50e5adcb-e862-4f30-936c-ebeb2aa72971" />
 
 
-viii.) Analyze the results obtained from all platforms. Which one is faster, why is it faster, why speedup is not comparable with the theorical frameworks, etc.
+# viii.) Analyze the results obtained from all platforms. Which one is faster, why is it faster, why speedup is not comparable with the theorical frameworks, etc.
 
 Based on the results, the SIMD implementations using XMM and YMM registers generally performed faster than the C and x86-64 implementations. Among the four kernels, YMM achieved the fastest execution time in all tested cases under Release. This is because SIMD allows multiple floating-point values to be processed in a single instruction. XMM registers can process 4 single-precision floating-point values at a time, while YMM registers can process 8.
 
