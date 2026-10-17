@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="SIMDProjectGRP2.vcxproj" Id="edbfc451-fbe7-4fc6-b01f-25d368ec101f" />
+</Solution>

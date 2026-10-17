@@ -1,0 +1,18 @@
+﻿  Performing Custom Build Tools
+  Performing Custom Build Tools
+  Performing Custom Build Tools
+  main.c
+C:\Users\Jonathan\csarch stuff\ceparco\SIMD Project Repo\visual\SIMDProjectGRP2\main.c(82,20): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+C:\Users\Jonathan\csarch stuff\ceparco\SIMD Project Repo\visual\SIMDProjectGRP2\main.c(91,12): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type '__int64'
+      C:\Users\Jonathan\csarch stuff\ceparco\SIMD Project Repo\visual\SIMDProjectGRP2\main.c(91,12):
+      consider using '%lld' in the format string
+      C:\Users\Jonathan\csarch stuff\ceparco\SIMD Project Repo\visual\SIMDProjectGRP2\main.c(91,12):
+      consider using '%Id' in the format string
+      C:\Users\Jonathan\csarch stuff\ceparco\SIMD Project Repo\visual\SIMDProjectGRP2\main.c(91,12):
+      consider using '%I64d' in the format string
+  
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 11 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  SIMDProjectGRP2.vcxproj -> C:\Users\Jonathan\csarch stuff\ceparco\SIMD Project Repo\visual\SIMDProjectGRP2\x64\Release\SIMDProjectGRP2.exe
