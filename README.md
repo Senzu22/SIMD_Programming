@@ -114,7 +114,7 @@ The measured speedups also differed from theoretical expectations because proces
 
 Overall, the results show that SIMD can significantly improve performance, especially for larger matrices. YMM generally achieved the best performance, followed closely by XMM, while the x86-64 implementation provided smaller improvements over C.
 
-ix.) Discuss the problems encountered and solutions made, unique methodology used, AHA moments, etc.
+# ix.) Discuss the problems encountered and solutions made, unique methodology used, AHA moments, etc.
 
 Problems were encountered with switching from the terminal command prompt to Visual Studio. Setting took a lot of trial and error in figuring out how to set up multiple ASM files in Visual Studio. This was eventually fixed by individually creating a new file and adding the custom command line that accesses NASM. The main C file template was originally recording time with a clock header from time.h, but due to the inability to record small values, it resulted in a 0.00000 display of results. This was solved using the QueryPerformanceFrequency timer which uses actual frequencies to time the result, giving much more accurate time data. The compareVector function was originally a 1-to-1 equal sign for comparing two components of the vectors. This means that comparing the vector output of the asm files to c, would result in not equal. We added some tolerance of 0.001 so that results that agree to about 5 digits count as equal.
 
