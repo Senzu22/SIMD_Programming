@@ -102,7 +102,11 @@ vii.) screenshot of boundary check for SIMD XMM and SIMD YMM.
 
 viii.) Analyze the results obtained from all platforms. Which one is faster, why is it faster, why speedup is not comparable with the theorical frameworks, etc.
 
+Based on the results, the SIMD implementations using XMM and YMM registers generally performed faster than the C and x86-64 implementations. Among the four kernels, YMM achieved the fastest execution time in all tested cases under Release. This is because SIMD allows multiple floating-point values to be processed in a single instruction. XMM registers can process 4 single-precision floating-point values at a time, while YMM registers can process 8.
 
+For the largest matrix size, (n = 32768 or 2^30), YMM was approximately 3.1x faster than C, while XMM was approximately 2.9x faster. However, the difference between XMM and YMM was relatively small, showing that doubling the register width does not necessarily double the overall performance.
+
+The Debug and Release configurations also showed differences in execution time. Release generally performed faster because compiler optimizations improve the generated machine code. For example, the C implementation for (n = 32768) decreased from 4.44 seconds in Debug to 1.40 seconds in Release. Since the C implementation also benefits from optimization, the speedup of the SIMD kernels relative to C may be smaller in Release than in Debug.
 
 ix.) Discuss the problems encountered and solutions made, unique methodology used, AHA moments, etc.
 
