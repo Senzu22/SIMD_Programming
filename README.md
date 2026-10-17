@@ -30,15 +30,47 @@ ii.) comparative table of execution time as well as analysis of the performance 
 
 iii.) screenshot of the program output with correctness check (C)
 
+Case: 2^13 x 2^13 Matrix RELEASE Version
+
+<img width="795" height="82" alt="image" src="https://github.com/user-attachments/assets/aff71575-3178-4bee-be24-f30a5ac881f4" />
+
+<img width="835" height="22" alt="image" src="https://github.com/user-attachments/assets/84875606-c01d-406c-8556-28c3239cab37" />
+
+
 
 iv.) screenshot of the program output, including correctness check (x86-64)
 
+<img width="807" height="82" alt="image" src="https://github.com/user-attachments/assets/9bba7349-369a-4354-b05b-096feb29cdf8" />
+
+<img width="105" height="30" alt="image" src="https://github.com/user-attachments/assets/1a616109-2bce-4b15-9a4c-65f2a5a97cf0" />
+
+
+
 v.) screenshot of the program output, including correctness check (SIMD XMM register)
+
+<img width="783" height="82" alt="image" src="https://github.com/user-attachments/assets/2e0d23c6-4351-4149-b49e-63e5c925bc10" />
+
+<img width="152" height="32" alt="image" src="https://github.com/user-attachments/assets/5b5ce42e-9fc3-49a1-9e43-971d1f884d4e" />
+
+
+
 
 vi.) screenshot of the program output, including correctness check (SIMD, YMM register)
 
+<img width="812" height="81" alt="image" src="https://github.com/user-attachments/assets/9334d08c-5f35-40e0-be6e-a89f8d904b4b" />
+
+<img width="167" height="27" alt="image" src="https://github.com/user-attachments/assets/c9c144e8-9a0f-4384-a79f-5d314effbdad" />
+
+
+
 vii.) screenshot of boundary check for SIMD XMM and SIMD YMM.
+<img width="638" height="625" alt="image" src="https://github.com/user-attachments/assets/50e5adcb-e862-4f30-936c-ebeb2aa72971" />
+
 
 viii.) Analyze the results obtained from all platforms. Which one is faster, why is it faster, why speedup is not comparable with the theorical frameworks, etc.
 
+
+
 ix.) Discuss the problems encountered and solutions made, unique methodology used, AHA moments, etc.
+
+
