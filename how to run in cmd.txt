@@ -1,11 +1,11 @@
-nasm -f win64 x86.asm
-nasm -f win64 xmm.asm
-nasm -f win64 ymm.asm
+nasm -f win64 x86Scalar.asm
+nasm -f win64 SIMD_XMM.asm
+nasm -f win64 SIMD_YMM.asm
 
 gcc -c main.c -o main.obj -m64
 
-gcc main.obj x86.obj xmm.obj ymm.obj -o main.exe -m64
+gcc main.obj x86Scalar.obj SIMD_XMM.obj SIMD_YMM.obj -o main.exe -m64
 
 main.exe
 
-copy line by line
+copy line by line in the cmd terminal

@@ -3,16 +3,16 @@
 #include <math.h>
 #include <windows.h>
 
-extern void MultMatrixVectorX86(float* A, float* v, float* result, int n);
-extern void MultMatrixVectorXMM(float* A, float* v, float* result, int n);
-extern void MultMatrixVectorYMM(float* A, float* v, float* result, int n);
+extern void x86Scalar(float* A, float* v, float* result, long long n);
+extern void SIMD_XMM(float* A, float* v, float* result, long long n);
+extern void SIMD_YMM(float* A, float* v, float* result, long long n);
 
 #define REPEAT 30
-static const int TEST_SIZES[] = {256, 512, 1024};
+static const long long TEST_SIZES[] = {256, 512, 1024};
 static const int NUM_TEST_SIZES = 3;
 static const int BOUNDARY_SIZE = 1013;
 
-void MultMatrixVector(float* A, float* v, float* result, int n){
+void MultMatrixVector(float* A, float* v, float* result, long long n){
     for(int i = 0; i < n; i++){
         float sum = 0.0f;
         for(int j=0; j < n; j++){
@@ -22,7 +22,7 @@ void MultMatrixVector(float* A, float* v, float* result, int n){
     }
 }
 
-void InitializeData(float* A, float* v, int n){
+void InitializeData(float* A, float* v, long long n){
     for(int i = 0; i < n; i++){
         v[i] = sinf(i*0.001f);
         for(int j =0; j < n; j++){
@@ -31,9 +31,9 @@ void InitializeData(float* A, float* v, int n){
     }
 }
 
-typedef void(*Kernel)(float*, float*, float*, int);
+typedef void(*Kernel)(float*, float*, float*, long long);
 
-double TimeKernel(Kernel kernel, float* A, float* x, float* y, int n) {
+double TimeKernel(Kernel kernel, float* A, float* x, float* y, long long n) {
     LARGE_INTEGER freq, start, end;
     QueryPerformanceFrequency(&freq);
 
@@ -48,7 +48,7 @@ double TimeKernel(Kernel kernel, float* A, float* x, float* y, int n) {
 }
 
 
-int CompareVectors(float* reference, float* actual, int n){
+int CompareVectors(float* reference, float* actual, long long n){
     int equal = 1;
     for (int i = 0; i < n; i++) 
     {
@@ -68,7 +68,7 @@ int CompareVectors(float* reference, float* actual, int n){
     return equal;
 }
 
-void DisplayFirstLast5(const char* label, float *v, int n){
+void DisplayFirstLast5(const char* label, float *v, long long n){
     printf("%s\n", label);
 	printf("First 5 elements: ");
     for (int i = 0; i < 5; i++)
@@ -98,10 +98,14 @@ void CheckKernels(int n){
 
     InitializeData(A,v,n);
 
+    printf("Testing C Time... \n");
     double tC = TimeKernel(MultMatrixVector,   A, v, result_c,   n);
-    double tX86 = TimeKernel(MultMatrixVectorX86, A, v, result_x86, n);
-    double tXMM = TimeKernel(MultMatrixVectorXMM, A, v, result_xmm, n);
-    double tYMM = TimeKernel(MultMatrixVectorYMM, A, v, result_ymm, n);
+    printf("Testing x86 Time...\n");
+    double tX86 = TimeKernel(x86Scalar, A, v, result_x86, n);
+    printf("Testing XMM Time...\n");
+    double tXMM = TimeKernel(SIMD_XMM, A, v, result_xmm, n);
+    printf("Testing YMM Time...\n");
+    double tYMM = TimeKernel(SIMD_YMM, A, v, result_ymm, n);
 
     printf("C time: %f s\n", tC);
     printf("x86-64 time: %f s\n", tX86);

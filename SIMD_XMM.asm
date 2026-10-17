@@ -1,5 +1,6 @@
 section .text
 global SIMD_XMM
+
 SIMD_XMM:
     mov r10, r9
     and r10, -4
