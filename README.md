@@ -3,21 +3,33 @@ README
 
 i.) screenshot of the program output with execution time for all cases
 
-Case 1: 2^10 x 2^10 Matrix
+DEBUG VERSION Visual Studio
 
-<img width="680" height="646" alt="test1024" src="https://github.com/Senzu22/SIMD_Programming/blob/d265828cfb2287f499097839bdec1051070fb403/Screenshots/test1024.png"/>
+<img width="356" height="207" alt="image" src="https://github.com/user-attachments/assets/a7838280-20f8-4cbb-b6bf-b0d4d8b54661" />
 
-Case 2: 2^13 x 2^13 Matrix
+<img width="341" height="212" alt="image" src="https://github.com/user-attachments/assets/977e5305-344c-41d3-8726-79697a432b08" />
 
-<img width="680" height="646" alt="test1024" src="https://github.com/Senzu22/SIMD_Programming/blob/d265828cfb2287f499097839bdec1051070fb403/Screenshots/test32768.png"/>
+<img width="355" height="212" alt="image" src="https://github.com/user-attachments/assets/fd73acf9-486d-4b2d-821f-4fc3b89b8697" />
 
-Case 2: 2^15 x 2^15 Matrix
+<img width="602" height="236" alt="image" src="https://github.com/user-attachments/assets/55671495-e79c-495a-8a97-e9bf540188e9" />
 
-<img width="680" height="646" alt="test1024" src="https://github.com/Senzu22/SIMD_Programming/blob/d265828cfb2287f499097839bdec1051070fb403/Screenshots/test8192.png"/>
+
+RELEASE VERSION Visual Studio
+
+<img width="350" height="212" alt="image" src="https://github.com/user-attachments/assets/3302cc9d-6a32-4a64-b6da-e53f69433da4" />
+
+<img width="372" height="220" alt="image" src="https://github.com/user-attachments/assets/44ba6d96-0fd9-41ae-a4e9-2840644cc1f0" />
+
+<img width="362" height="217" alt="image" src="https://github.com/user-attachments/assets/2368d8d2-365f-4515-8194-8ea2b759b060" />
+
+<img width="603" height="245" alt="image" src="https://github.com/user-attachments/assets/37b99155-51a5-4dad-9692-7ba2aab39c09" />
+
 
 ii.) comparative table of execution time as well as analysis of the performance of diﬀerent kernels (how many times faster, why is it faster, etc.)
 
+
 iii.) screenshot of the program output with correctness check (C)
+
 
 iv.) screenshot of the program output, including correctness check (x86-64)
 
