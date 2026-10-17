@@ -8,7 +8,7 @@ extern void SIMD_XMM(float* A, float* v, float* result, long long n);
 extern void SIMD_YMM(float* A, float* v, float* result, long long n);
 
 #define REPEAT 30
-static const long long TEST_SIZES[] = {256, 512, 1024};
+static const long long TEST_SIZES[] = {1024, 8192, 32768};
 static const int NUM_TEST_SIZES = 3;
 static const int BOUNDARY_SIZE = 1013;
 
@@ -86,7 +86,7 @@ void DisplayFirstLast5(const char* label, float *v, long long n){
 }
 
 
-void CheckKernels(int n){
+void CheckKernels(long long n){
     printf("Test For array size n = %d\n", n);
 
     float* A = (float*) malloc((size_t)n * n * sizeof(float));
@@ -99,7 +99,7 @@ void CheckKernels(int n){
     InitializeData(A,v,n);
 
     printf("Testing C Time... \n");
-    double tC = TimeKernel(MultMatrixVector,   A, v, result_c,   n);
+    double tC = TimeKernel(MultMatrixVector, A, v, result_c,   n);
     printf("Testing x86 Time...\n");
     double tX86 = TimeKernel(x86Scalar, A, v, result_x86, n);
     printf("Testing XMM Time...\n");
