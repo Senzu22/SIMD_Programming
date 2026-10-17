@@ -59,7 +59,7 @@ RELEASE (seconds)
 | 32768 | 1.395032 | 1.097261 | 0.474805 | 0.455065 |
 | 1013 (boundary) | 0.001186 | 0.000934 | 0.000268 | 0.000218 |
 
-SPEEDUP OVER C (DEBUG)
+SPEEDUP OVER C (RELEASE)
 | n | x86-64 | XMM | YMM |
 |---|---|---|---|
 | 1024 | 1.0x | 4.0x | 6.0x |
@@ -67,7 +67,7 @@ SPEEDUP OVER C (DEBUG)
 | 32768 | 1.3x | 2.9x | 3.1x |
 | 1013 | 1.3x | 4.4x | 5.4x |
 
-SPEEDUP OVER C (RELEASE)
+SPEEDUP OVER C (DEBUG)
 | n | x86-64 | XMM | YMM |
 |---|---|---|---|
 | 1024 | 3.8x | 15.6x | 21.7x |
