@@ -1,0 +1,11 @@
+nasm -f win64 x86.asm
+nasm -f win64 xmm.asm
+nasm -f win64 ymm.asm
+
+gcc -c main.c -o main.obj -m64
+
+gcc main.obj x86.obj xmm.obj ymm.obj -o main.exe -m64
+
+main.exe
+
+copy line by line
